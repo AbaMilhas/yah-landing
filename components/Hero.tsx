@@ -5,21 +5,23 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="bg-[#2A063A] text-white pb-20 pt-24">
-      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 lg:flex-row lg:items-center">
+      <div className="mx-auto flex max-w-6xl flex-col gap-14 px-6 lg:flex-row lg:items-center">
+        
         {/* COLUNA ESQUERDA */}
-        <div className="flex-1 space-y-10">
+        <div className="flex-1 space-y-12">
+          
           {/* Selo */}
           <p className="flex items-center gap-2 text-sm font-medium text-teal-300">
             <span className="h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
             Banco de milhas
           </p>
 
-          {/* LOGO NO LUGAR DO TÍTULO */}
-          <div>
+          {/* LOGO GRANDE */}
+          <div className="flex">
             <img
               src="/logo-yah-header.png"
               alt="Yah Milhas"
-              className="h-20 w-auto sm:h-24 lg:h-28"
+              className="h-[110px] w-auto sm:h-[140px] lg:h-[170px]"
               loading="eager"
               decoding="sync"
             />
@@ -33,16 +35,16 @@ export default function Hero() {
           {/* CTA principal */}
           <Link
             href="#contato"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#00E5E5] px-10 py-4 text-base font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.55)]"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#00E5E5] px-12 py-4 text-lg font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.55)]"
           >
             Falar com especialista
-            <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
+            <span className="text-xl transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
           </Link>
 
-          {/* Números */}
-          <div className="mt-6 grid gap-4 sm:grid-cols-4">
+          {/* MÉTRICAS */}
+          <div className="mt-4 grid gap-4 sm:grid-cols-4">
             {[
               { label: "emissões/ano", value: "3.700+" },
               { label: "milhas negociadas", value: "300M+" },
@@ -51,7 +53,7 @@ export default function Hero() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/20"
+                className="rounded-2xl border border-white/10 bg-white/10 px-6 py-5 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/20"
               >
                 <p className="text-2xl font-bold">{item.value}</p>
                 <p className="text-xs text-slate-300">{item.label}</p>
@@ -60,10 +62,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* COLUNA DIREITA — CARD MENOR E MODERNO DE BENEFÍCIOS */}
+        {/* COLUNA DIREITA — CARD DE BENEFÍCIOS */}
         <div className="flex-1 flex justify-end">
-          <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.04] px-8 py-8 shadow-[0_18px_55px_rgba(0,0,0,0.5)] backdrop-blur-xl">
-            {/* Cabeçalho do card */}
+          <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.05] px-8 py-10 shadow-[0_18px_55px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+
             <div className="mb-6 space-y-2">
               <span className="text-xs font-semibold tracking-[0.18em] uppercase text-teal-300">
                 Benefícios Yah milhas
@@ -81,30 +83,28 @@ export default function Hero() {
                 {
                   title: "Liquidez rápida",
                   description:
-                    "Operações estruturadas para transformar milhas em dinheiro com agilidade e previsibilidade.",
+                    "Transforme suas milhas em dinheiro com velocidade e estabilidade.",
                 },
                 {
                   title: "Atendimento imediato",
                   description:
-                    "Canal direto via WhatsApp com time especialista, respostas rápidas e acompanhamento próximo.",
+                    "Um time que realmente responde — rápido, humano e especialista.",
                 },
                 {
                   title: "Segurança & compliance",
                   description:
-                    "Processos documentados, transparência em cada etapa e cuidado com os dados de todos os envolvidos.",
+                    "Transparência total e processos seguros em todas as etapas.",
                 },
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="group flex gap-3 rounded-2xl bg-white/[0.03] px-4 py-3 transition-all duration-300 hover:bg-white/[0.08] hover:-translate-y-0.5"
+                  className="group flex gap-3 rounded-2xl bg-white/[0.04] px-4 py-3 transition-all duration-300 hover:bg-white/[0.1] hover:-translate-y-0.5"
                 >
                   <div className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-teal-500/20 text-sm text-teal-300">
                     ●
                   </div>
                   <div className="space-y-1">
-                    <p className="text-sm font-semibold text-white">
-                      {item.title}
-                    </p>
+                    <p className="text-sm font-semibold text-white">{item.title}</p>
                     <p className="text-xs leading-relaxed text-slate-200/85">
                       {item.description}
                     </p>
@@ -112,6 +112,7 @@ export default function Hero() {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>
