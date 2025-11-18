@@ -4,35 +4,35 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-[#2A063A] text-white pb-20 pt-24">
+    <section className="bg-[#2A063A] text-white pb-24 pt-20">
       <div className="mx-auto flex max-w-6xl flex-col gap-14 px-6 lg:flex-row lg:items-center">
-        
+
         {/* COLUNA ESQUERDA */}
-        <div className="flex-1 space-y-12">
-          
+        <div className="flex-1 space-y-10">
+
           {/* Selo */}
           <p className="flex items-center gap-2 text-sm font-medium text-teal-300">
             <span className="h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
             Banco de milhas
           </p>
 
-          {/* LOGO GRANDE */}
-          <div className="flex">
+          {/* LOGO — agora integrada ao bloco principal */}
+          <div className="flex pt-4">
             <img
               src="/logo-yah-header.png"
               alt="Yah Milhas"
-              className="h-[110px] w-auto sm:h-[140px] lg:h-[170px]"
+              className="h-[130px] w-auto sm:h-[160px] lg:h-[190px]"
               loading="eager"
               decoding="sync"
             />
           </div>
 
-          {/* Subtítulo */}
-          <p className="max-w-xl text-lg text-slate-200 sm:text-xl leading-relaxed">
+          {/* Subtítulo mais próximo da logo para dar unidade visual */}
+          <p className="max-w-xl text-xl text-slate-200 sm:text-2xl leading-relaxed -mt-3">
             Milhas negociadas com inteligência — simples, rápido e confiável.
           </p>
 
-          {/* CTA principal */}
+          {/* CTA */}
           <Link
             href="#contato"
             className="group inline-flex items-center gap-2 rounded-full bg-[#00E5E5] px-12 py-4 text-lg font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.55)]"
@@ -44,7 +44,7 @@ export default function Hero() {
           </Link>
 
           {/* MÉTRICAS */}
-          <div className="mt-4 grid gap-4 sm:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-4">
             {[
               { label: "emissões/ano", value: "3.700+" },
               { label: "milhas negociadas", value: "300M+" },
@@ -62,10 +62,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* COLUNA DIREITA — CARD DE BENEFÍCIOS */}
+        {/* COLUNA DIREITA — CARD BENEFÍCIOS */}
         <div className="flex-1 flex justify-end">
           <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.05] px-8 py-10 shadow-[0_18px_55px_rgba(0,0,0,0.5)] backdrop-blur-xl">
-
+            
             <div className="mb-6 space-y-2">
               <span className="text-xs font-semibold tracking-[0.18em] uppercase text-teal-300">
                 Benefícios Yah milhas
@@ -77,7 +77,6 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Blocos de benefícios */}
             <div className="space-y-4">
               {[
                 {
@@ -88,12 +87,12 @@ export default function Hero() {
                 {
                   title: "Atendimento imediato",
                   description:
-                    "Um time que realmente responde — rápido, humano e especialista.",
+                    "Respostas rápidas, humanas e especializadas.",
                 },
                 {
                   title: "Segurança & compliance",
                   description:
-                    "Transparência total e processos seguros em todas as etapas.",
+                    "Processos transparentes e protegidos em todas as etapas.",
                 },
               ].map((item) => (
                 <div
