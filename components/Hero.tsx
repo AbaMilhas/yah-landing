@@ -14,12 +14,16 @@ export default function Hero() {
             Banco de milhas
           </p>
 
-          {/* Título */}
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
-            <span className="font-bold">Yah</span>{" "}
-            <span className="font-normal">milhas</span>
-            <span className="text-teal-400">.</span>
-          </h1>
+          {/* LOGO NO LUGAR DO TÍTULO */}
+          <div>
+            <img
+              src="/logo-yah-header.png"
+              alt="Yah Milhas"
+              className="h-20 w-auto sm:h-24 lg:h-28"
+              loading="eager"
+              decoding="sync"
+            />
+          </div>
 
           {/* Subtítulo */}
           <p className="max-w-xl text-lg text-slate-200 sm:text-xl leading-relaxed">
@@ -56,7 +60,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* COLUNA DIREITA — CARD MENOR E MODERNO */}
+        {/* COLUNA DIREITA — CARD MENOR E MODERNO DE BENEFÍCIOS */}
         <div className="flex-1 flex justify-end">
           <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.04] px-8 py-8 shadow-[0_18px_55px_rgba(0,0,0,0.5)] backdrop-blur-xl">
             {/* Cabeçalho do card */}
@@ -71,7 +75,7 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Blocos de benefícios (3 itens, mais modernos) */}
+            {/* Blocos de benefícios */}
             <div className="space-y-4">
               {[
                 {
