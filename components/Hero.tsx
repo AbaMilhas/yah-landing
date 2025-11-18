@@ -4,31 +4,31 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-[#2A063A] text-white pb-24 pt-20">
-      <div className="mx-auto flex max-w-6xl flex-col gap-14 px-6 lg:flex-row lg:items-center">
+    <section className="bg-[#2A063A] text-white pb-20 pt-16">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 lg:flex-row lg:items-center">
 
         {/* COLUNA ESQUERDA */}
-        <div className="flex-1 space-y-10">
+        <div className="flex-1 space-y-6">
 
-          {/* Selo */}
+          {/* Selo — AGORA COM MENOS ESPAÇAMENTO */}
           <p className="flex items-center gap-2 text-sm font-medium text-teal-300">
             <span className="h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
             Banco de milhas
           </p>
 
-          {/* LOGO — agora integrada ao bloco principal */}
-          <div className="flex pt-4">
+          {/* LOGO — MUITO MAIOR E EM DESTAQUE */}
+          <div className="-mt-1">
             <img
               src="/logo-yah-header.png"
               alt="Yah Milhas"
-              className="h-[130px] w-auto sm:h-[160px] lg:h-[190px]"
+              className="h-[150px] w-auto sm:h-[180px] lg:h-[200px]"
               loading="eager"
               decoding="sync"
             />
           </div>
 
-          {/* Subtítulo mais próximo da logo para dar unidade visual */}
-          <p className="max-w-xl text-xl text-slate-200 sm:text-2xl leading-relaxed -mt-3">
+          {/* Subtítulo — AGORA BEM MAIS PRÓXIMO DA LOGO */}
+          <p className="max-w-xl text-xl text-slate-200 sm:text-2xl leading-relaxed -mt-2">
             Milhas negociadas com inteligência — simples, rápido e confiável.
           </p>
 
@@ -44,7 +44,7 @@ export default function Hero() {
           </Link>
 
           {/* MÉTRICAS */}
-          <div className="grid gap-4 sm:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-4 mt-2">
             {[
               { label: "emissões/ano", value: "3.700+" },
               { label: "milhas negociadas", value: "300M+" },
@@ -114,6 +114,7 @@ export default function Hero() {
 
           </div>
         </div>
+
       </div>
     </section>
   );
