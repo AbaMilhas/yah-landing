@@ -40,4 +40,19 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-[#f9fafb] p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/70 hover:shadow-[0_18px_45px_rgba(15,23,42,0.18)]"
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-[#f9fafb] p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/70 hover:shadow-xl"
+            >
+              <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-teal-50 text-xs font-semibold text-teal-600">
+                {index + 1}
+              </span>
+              <h3 className="mb-2 text-lg font-semibold text-slate-900 transition-colors group-hover:text-teal-600">
+                {step.title}
+              </h3>
+              <p className="text-sm text-slate-600">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
