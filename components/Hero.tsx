@@ -28,7 +28,6 @@ function AnimatedNumber({ target, duration = 1500, format }: AnimatedNumberProps
     };
 
     frameId = requestAnimationFrame(step);
-
     return () => cancelAnimationFrame(frameId);
   }, [target, duration]);
 
@@ -41,38 +40,39 @@ export default function Hero() {
     {
       label: "emissões/ano",
       target: 3700,
-      format: (v: number) => `${v.toLocaleString("pt-BR")}+`, // 3.700+
+      format: (v: number) => `${v.toLocaleString("pt-BR")}+`,
     },
     {
       label: "milhas negociadas",
       target: 300,
-      format: (v: number) => `${v}M+`, // 300M+
+      format: (v: number) => `${v}M+`,
     },
     {
       label: "agências parceiras",
       target: 100,
-      format: (v: number) => `${v}+`, // 100+
+      format: (v: number) => `${v}+`,
     },
     {
       label: "clientes embarcados",
       target: 10000,
       format: (v: number) =>
-        v >= 1000 ? `${Math.floor(v / 1000)}k+` : `${v}+`, // 10k+
+        v >= 1000 ? `${Math.floor(v / 1000)}k+` : `${v}+`,
     },
   ];
 
   return (
     <section className="bg-[#2A063A] text-white pb-16 pt-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 lg:flex-row lg:items-center">
+        
         {/* COLUNA ESQUERDA */}
         <div className="flex-1 space-y-4">
-          {/* Selo — MUITO PRÓXIMO DO TOPO */}
+          {/* Selo */}
           <p className="flex items-center gap-2 text-sm font-medium text-teal-300 -mb-1">
             <span className="h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
             Banco de milhas
           </p>
 
-          {/* LOGO — PERFEITA, MAS COM ESPAÇAMENTO MINIMAL */}
+          {/* Logo */}
           <div className="-mt-2">
             <img
               src="/logo-yah-header.png"
@@ -83,12 +83,12 @@ export default function Hero() {
             />
           </div>
 
-          {/* Subtítulo — COLADO NA LOGO */}
+          {/* Subtítulo */}
           <p className="max-w-xl text-lg sm:text-xl text-slate-200 leading-relaxed -mt-3">
             Milhas negociadas com inteligência — simples, rápido e confiável.
           </p>
 
-          {/* CTA — SEM SETA */}
+          {/* CTA */}
           <Link
             href="#contato"
             className="inline-flex items-center rounded-full bg-[#00E5E5] px-10 py-3 text-base font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
@@ -96,8 +96,8 @@ export default function Hero() {
             Falar com especialista
           </Link>
 
-          {/* MÉTRICAS — COM CONTADOR ANIMADO */}
-          <div className="grid gap-3 sm:grid-cols-4 mt-2">
+          {/* MÉTRICAS com contador */}
+          <div className="mt-2 grid gap-3 sm:grid-cols-4">
             {stats.map((item) => (
               <div
                 key={item.label}
@@ -112,10 +112,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* COLUNA DIREITA — CARD BENEFÍCIOS */}
+        {/* COLUNA DIREITA – CARD NOVO DE BENEFÍCIOS */}
         <div className="flex-1 flex justify-end">
-          <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-white/[0.06] px-6 py-7 shadow-[0_18px_55px_rgba(0,0,0,0.5)] backdrop-blur-xl">
-            <div className="mb-4 space-y-1">
+          <div className="w-full max-w-sm rounded-2xl border border-white/12 bg-white/[0.05] px-7 py-7 shadow-[0_16px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+            {/* Cabeçalho */}
+            <div className="space-y-1 mb-4">
               <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-teal-300">
                 Benefícios Yah milhas
               </span>
@@ -123,44 +124,47 @@ export default function Hero() {
                 Por que escolher a Yah?
               </h2>
               <p className="text-[11px] text-slate-200/85 leading-relaxed">
-                O que torna a Yah a parceira ideal para transformar suas milhas
-                em valor real.
+                Um modelo pensado para dar previsibilidade, atendimento sério
+                e segurança em cada operação com milhas.
               </p>
             </div>
 
+            {/* Lista numerada de benefícios */}
             <div className="space-y-3">
               {[
                 {
                   title: "Liquidez rápida",
                   description:
-                    "Venda estável, previsível e com pagamento ágil.",
+                    "Compra e venda estruturadas para você girar milhas sem travar o caixa.",
                 },
                 {
                   title: "Atendimento imediato",
                   description:
-                    "Respostas rápidas e suporte humano, sempre que precisar.",
+                    "Time dedicado no WhatsApp, acompanhando de perto cada emissão.",
                 },
                 {
                   title: "Segurança & compliance",
                   description:
-                    "Transparência total e proteção em todas as etapas.",
+                    "Processos documentados e rastreáveis, protegendo dados e acordos.",
                 },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="group flex gap-3 rounded-xl bg-white/[0.05] px-3 py-3 transition-all duration-300 hover:bg-white/[0.13] hover:-translate-y-0.5"
-                >
-                  <div className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-teal-500/20 text-xs text-teal-300">
-                    ●
+              ].map((item, index) => (
+                <div key={item.title}>
+                  <div className="flex gap-3 rounded-xl bg-white/[0.03] px-3 py-3 transition-all duration-300 hover:bg-white/[0.1] hover:-translate-y-0.5">
+                    <div className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-teal-500/22 text-[11px] font-semibold text-teal-200">
+                      {`0${index + 1}`}
+                    </div>
+                    <div className="space-y-[2px]">
+                      <p className="text-sm font-semibold text-white">
+                        {item.title}
+                      </p>
+                      <p className="text-[11px] leading-relaxed text-slate-200/85">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-[2px]">
-                    <p className="text-sm font-semibold text-white">
-                      {item.title}
-                    </p>
-                    <p className="text-[11px] leading-relaxed text-slate-200/85">
-                      {item.description}
-                    </p>
-                  </div>
+                  {index < 2 && (
+                    <div className="mx-3 my-2 h-px bg-white/10" />
+                  )}
                 </div>
               ))}
             </div>
