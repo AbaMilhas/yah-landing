@@ -8,16 +8,17 @@ const CPM: Record<string, number> = {
   Smiles: 14.0,
   Azul: 10.0,
   TAP: 37.0,
-  American Airlines: 70.0,
+  "American Airlines": 70.0,
   Iberia: 45.0,
   Qatar: 50.0,
   British: 50.0,
   Livelo: 25.0,
   Esfera: 25.0,
-  C6 Bank: 35.0,
+  "C6 Bank": 35.0,
   Itau: 35.0,
   Outros: 30.0,
 };
+
 
 type CotacaoPayload = {
   cia: string;
