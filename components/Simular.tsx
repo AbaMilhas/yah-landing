@@ -4,17 +4,17 @@ import React, { useMemo, useState } from "react";
 
 /** Tabela de CPM (R$/milheiro) - ajuste conforme sua precificação */
 const CPM: Record<string, number> = {
-  Latam: 26.0,
-  Smiles: 21.0,
-  Azul: 18.0,
-  TAP: 57.0,
-  "American Airlines": 58.0,
-  Iberia: 52.0,
-  Qatar: 57.0,
-  British: 55.0,
-  Livelo: 42.0,
-  Esfera: 38.0,
-  "C6 Bank": 36.0,
+  Latam: 22.0,
+  Smiles: 14.0,
+  Azul: 10.0,
+  TAP: 37.0,
+  American Airlines: 70.0,
+  Iberia: 45.0,
+  Qatar: 50.0,
+  British: 50.0,
+  Livelo: 25.0,
+  Esfera: 25.0,
+  C6 Bank: 35.0,
   Itau: 35.0,
   Outros: 30.0,
 };
@@ -96,11 +96,12 @@ export default function Simular() {
   const salvarRemoto = async (payload: CotacaoPayload) => {
     // /api/cotacao
     try {
-      await fetch("/api/cotacao", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      await fetch(`${window.location.origin}/api/cotacao`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(payload),
+});
+
     } catch {}
 
     // /api/contato
