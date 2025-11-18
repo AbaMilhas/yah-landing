@@ -42,30 +42,30 @@ export default function Header() {
             Contato
           </a>
 
-          {/* BOTÃO ANIMADO IGUAL AO HERO */}
+          {/* BOTÃO ELEGANTE */}
           <a
             href="#simular"
-            className="group relative inline-flex items-center overflow-hidden rounded-full bg-teal-500 px-5 py-2 font-semibold text-slate-950 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-400 hover:shadow-[0_18px_40px_rgba(0,0,0,0.7)]"
+            className="
+              group inline-flex items-center gap-2
+              rounded-full border border-teal-400/70
+              px-5 py-2 font-semibold text-teal-300
+              transition-all duration-300
+              hover:bg-teal-400/10 hover:text-white
+              hover:border-teal-300 hover:-translate-y-0.5
+            "
           >
-            <span className="relative z-10 flex items-center gap-1">
-              Simular cotação
-              <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
-                ↗
-              </span>
+            Simular cotação
+            <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
+              →
             </span>
-
-            {/* Glow animado no hover */}
-            <span
-              aria-hidden="true"
-              className="absolute inset-0 -z-10 scale-0 bg-teal-300/30 opacity-0 blur-xl transition-all duration-500 group-hover:scale-100 group-hover:opacity-100"
-            />
           </a>
+
         </nav>
 
         {/* BOTÃO MOBILE */}
         <a
           href="#simular"
-          className="md:hidden rounded-full bg-teal-500 px-4 py-2 text-sm font-semibold text-slate-900 shadow-md transition-all hover:bg-teal-400"
+          className="md:hidden rounded-full border border-teal-400/70 px-4 py-2 text-sm font-semibold text-teal-300 transition-all hover:bg-teal-400/10 hover:text-white"
         >
           Simular
         </a>
