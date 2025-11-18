@@ -32,18 +32,15 @@ export default function Hero() {
             Milhas negociadas com inteligência — simples, rápido e confiável.
           </p>
 
-          {/* CTA — MAIS PERTO DO TEXTO */}
+          {/* CTA — SEM SETA */}
           <Link
             href="#contato"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#00E5E5] px-10 py-3 text-base font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
+            className="inline-flex items-center rounded-full bg-[#00E5E5] px-10 py-3 text-base font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]"
           >
             Falar com especialista
-            <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
           </Link>
 
-          {/* MÉTRICAS — MAIS COMPACTAS */}
+          {/* MÉTRICAS — COM ANIMAÇÃO DE CRESCER NO HOVER */}
           <div className="grid gap-3 sm:grid-cols-4 mt-2">
             {[
               { label: "emissões/ano", value: "3.700+" },
@@ -53,7 +50,7 @@ export default function Hero() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="rounded-xl border border-white/10 bg-white/10 px-4 py-4 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/20"
+                className="transform rounded-xl border border-white/10 bg-white/10 px-4 py-4 text-center shadow-md transition-transform transition-colors duration-300 hover:-translate-y-1 hover:scale-105 hover:bg:white/20 hover:bg-white/20"
               >
                 <p className="text-xl font-bold">{item.value}</p>
                 <p className="text-[11px] text-slate-300">{item.label}</p>
