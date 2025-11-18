@@ -4,18 +4,18 @@ export default function HowItWorks() {
   const steps = [
     {
       number: "1",
-      title: "O cliente faz a cotação",
-      text: "Ele envia as informações e recebe uma proposta clara e rápida.",
+      title: "Você faz a cotação",
+      text: "Nos envia seus pontos e recebe rapidamente uma proposta clara e justa.",
     },
     {
       number: "2",
       title: "Se fizer sentido, fala com nosso time",
-      text: "A equipe Yah alinha tudo com o cliente e confirma a negociação.",
+      text: "Confirmamos todos os detalhes juntos, sem complicação ou burocracia.",
     },
     {
       number: "3",
-      title: "Emissão e pagamento em até 48h úteis",
-      text: "Após emissão das passagens, o pagamento é liberado com agilidade.",
+      title: "Emitimos e você recebe em até 48h úteis",
+      text: "Após a emissão das passagens, o pagamento é liberado com agilidade.",
     },
   ];
 
@@ -24,26 +24,26 @@ export default function HowItWorks() {
       id="como-funciona"
       className="py-20 bg-[#1A0429] text-white border-t border-white/10"
     >
-      <div className="max-w-6xl mx-auto px-6 space-y-12">
+      <div className="max-w-4xl mx-auto px-6 space-y-12">
 
-        {/* Título */}
-        <div className="space-y-3 max-w-3xl">
+        {/* Títulos */}
+        <div className="space-y-3">
           <p className="text-teal-300 font-semibold tracking-[0.24em] uppercase text-sm">
             Como funciona
           </p>
 
           <h2 className="text-3xl sm:text-4xl font-bold">
-            Processo simples, resultado profissional.
+            Simples para você. Eficiente para seus resultados.
           </h2>
 
           <p className="text-slate-300 text-base leading-relaxed">
-            O fluxo foi pensado para ser rápido, seguro e transparente — do 
-            primeiro contato ao pagamento final.
+            Todo o processo foi criado para ser leve, objetivo e seguro — você sempre sabe
+            exatamente qual é o próximo passo.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid gap-6 md:grid-cols-3">
+        {/* Cards em coluna */}
+        <div className="space-y-6">
           {steps.map((step) => (
             <div
               key={step.number}
@@ -55,7 +55,7 @@ export default function HowItWorks() {
                 transition-all duration-300
               "
             >
-              {/* Número circular */}
+              {/* Número */}
               <div
                 className="
                   h-10 w-10 mb-4 flex items-center justify-center rounded-full
@@ -66,7 +66,7 @@ export default function HowItWorks() {
                 {step.number}
               </div>
 
-              <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
 
               <p className="text-slate-300 text-sm leading-relaxed">
                 {step.text}
@@ -74,6 +74,7 @@ export default function HowItWorks() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
