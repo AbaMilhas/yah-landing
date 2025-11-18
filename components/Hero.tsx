@@ -1,15 +1,71 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
+type AnimatedNumberProps = {
+  target: number;
+  duration?: number;
+  format?: (value: number) => string;
+};
+
+function AnimatedNumber({ target, duration = 1500, format }: AnimatedNumberProps) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    let frameId: number;
+    let start: number | null = null;
+
+    const step = (timestamp: number) => {
+      if (start === null) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const current = Math.floor(progress * target);
+      setValue(current);
+
+      if (progress < 1) {
+        frameId = requestAnimationFrame(step);
+      }
+    };
+
+    frameId = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(frameId);
+  }, [target, duration]);
+
+  const display = format ? format(value) : value.toString();
+  return <>{display}</>;
+}
+
 export default function Hero() {
+  const stats = [
+    {
+      label: "emissões/ano",
+      target: 3700,
+      format: (v: number) => `${v.toLocaleString("pt-BR")}+`, // 3.700+
+    },
+    {
+      label: "milhas negociadas",
+      target: 300,
+      format: (v: number) => `${v}M+`, // 300M+
+    },
+    {
+      label: "agências parceiras",
+      target: 100,
+      format: (v: number) => `${v}+`, // 100+
+    },
+    {
+      label: "clientes embarcados",
+      target: 10000,
+      format: (v: number) =>
+        v >= 1000 ? `${Math.floor(v / 1000)}k+` : `${v}+`, // 10k+
+    },
+  ];
+
   return (
     <section className="bg-[#2A063A] text-white pb-16 pt-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 lg:flex-row lg:items-center">
-
         {/* COLUNA ESQUERDA */}
         <div className="flex-1 space-y-4">
-
           {/* Selo — MUITO PRÓXIMO DO TOPO */}
           <p className="flex items-center gap-2 text-sm font-medium text-teal-300 -mb-1">
             <span className="h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
@@ -40,19 +96,16 @@ export default function Hero() {
             Falar com especialista
           </Link>
 
-          {/* MÉTRICAS — AGORA COM SCALE NO HOVER */}
+          {/* MÉTRICAS — COM CONTADOR ANIMADO */}
           <div className="grid gap-3 sm:grid-cols-4 mt-2">
-            {[
-              { label: "emissões/ano", value: "3.700+" },
-              { label: "milhas negociadas", value: "300M+" },
-              { label: "agências parceiras", value: "100+" },
-              { label: "clientes embarcados", value: "10k+" },
-            ].map((item) => (
+            {stats.map((item) => (
               <div
                 key={item.label}
                 className="rounded-xl border border-white/10 bg-white/10 px-4 py-4 text-center shadow-md transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white/20"
               >
-                <p className="text-xl font-bold">{item.value}</p>
+                <p className="text-xl font-bold">
+                  <AnimatedNumber target={item.target} format={item.format} />
+                </p>
                 <p className="text-[11px] text-slate-300">{item.label}</p>
               </div>
             ))}
@@ -62,7 +115,6 @@ export default function Hero() {
         {/* COLUNA DIREITA — CARD BENEFÍCIOS */}
         <div className="flex-1 flex justify-end">
           <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-white/[0.06] px-6 py-7 shadow-[0_18px_55px_rgba(0,0,0,0.5)] backdrop-blur-xl">
-
             <div className="mb-4 space-y-1">
               <span className="text-[11px] font-semibold tracking-[0.18em] uppercase text-teal-300">
                 Benefícios Yah milhas
@@ -71,7 +123,8 @@ export default function Hero() {
                 Por que escolher a Yah?
               </h2>
               <p className="text-[11px] text-slate-200/85 leading-relaxed">
-                O que torna a Yah a parceira ideal para transformar suas milhas em valor real.
+                O que torna a Yah a parceira ideal para transformar suas milhas
+                em valor real.
               </p>
             </div>
 
@@ -101,7 +154,9 @@ export default function Hero() {
                     ●
                   </div>
                   <div className="space-y-[2px]">
-                    <p className="text-sm font-semibold text-white">{item.title}</p>
+                    <p className="text-sm font-semibold text-white">
+                      {item.title}
+                    </p>
                     <p className="text-[11px] leading-relaxed text-slate-200/85">
                       {item.description}
                     </p>
@@ -109,10 +164,8 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );
