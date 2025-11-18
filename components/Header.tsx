@@ -23,65 +23,38 @@ export default function Header() {
 
           <a
             href="#servicos"
-            className="
-              text-white/80 
-              transition-all duration-200 
-              hover:text-[#00E5E5] hover:-translate-y-0.5
-            "
+            className="text-white/80 transition-all duration-200 hover:text-[#00E5E5] hover:-translate-y-0.5"
           >
             Serviços
           </a>
 
           <a
             href="#como-funciona"
-            className="
-              text-white/80 
-              transition-all duration-200 
-              hover:text-[#00E5E5] hover:-translate-y-0.5
-            "
+            className="text-white/80 transition-all duration-200 hover:text-[#00E5E5] hover:-translate-y-0.5"
           >
             Como funciona
           </a>
 
           <a
             href="#contato"
-            className="
-              text-white/80 
-              transition-all duration-200 
-              hover:text-[#00E5E5] hover:-translate-y-0.5
-            "
+            className="text-white/80 transition-all duration-200 hover:text-[#00E5E5] hover:-translate-y-0.5"
           >
             Contato
           </a>
 
-          {/* BOTÃO PREMIUM AZUL YAH */}
+          {/* BOTÃO SIMULAR COTAÇÃO — IGUAL AO PRINT */}
           <a
             href="#simular"
-            className="
-              group inline-flex items-center gap-2
-              rounded-full border border-[#00E5E5]
-              px-5 py-2 text-[#00E5E5] font-semibold
-              transition-all duration-300
-              hover:bg-[#00E5E5]/10 hover:-translate-y-0.5 hover:text-white
-            "
+            className="rounded-full bg-[#00E5E5] px-6 py-2.5 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#00cfd0]"
           >
             Simular cotação
-            <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
           </a>
-
         </nav>
 
         {/* BOTÃO MOBILE */}
         <a
           href="#simular"
-          className="
-            md:hidden rounded-full border border-[#00E5E5] 
-            px-4 py-2 text-sm font-semibold text-[#00E5E5]
-            transition-all duration-200
-            hover:bg-[#00E5E5]/10 hover:text-white
-          "
+          className="md:hidden rounded-full bg-[#00E5E5] px-4 py-2 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#00cfd0]"
         >
           Simular
         </a>
