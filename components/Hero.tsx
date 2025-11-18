@@ -6,39 +6,38 @@ export default function Hero() {
   return (
     <section className="bg-[#12051d] text-white pb-20 pt-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 lg:flex-row lg:items-center">
+        
         {/* COLUNA ESQUERDA */}
         <div className="flex-1 space-y-10">
+
           {/* Selo */}
           <p className="flex items-center gap-2 text-sm font-medium text-teal-300">
             <span className="h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
             Banco de milhas
           </p>
 
-          {/* Título + subtítulo */}
-          <div className="space-y-4">
-            <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
-              <span className="font-bold">Yah</span>{" "}
-              <span className="font-normal">milhas</span>
-              <span className="text-teal-400">.</span>
-            </h1>
+          {/* Título */}
+          <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+            <span className="font-bold">Yah</span>{" "}
+            <span className="font-normal">milhas</span>
+            <span className="text-teal-400">.</span>
+          </h1>
 
-            <p className="max-w-xl text-lg text-slate-200 sm:text-xl">
-              Milhas negociadas com inteligência — simples, rápido e confiável.
-            </p>
-          </div>
+          {/* Subtítulo */}
+          <p className="max-w-xl text-lg text-slate-200 sm:text-xl leading-relaxed">
+            Milhas negociadas com inteligência — simples, rápido e confiável.
+          </p>
 
-          {/* CTA principal */}
-          <div>
-            <Link
-              href="#contato"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#00E5E5] px-8 py-3 text-sm font-semibold text-slate-900 shadow-md transition-all duration-250 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.65)]"
-            >
-              Falar com especialista
-              <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
-          </div>
+          {/* CTA */}
+          <Link
+            href="#contato"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#00E5E5] px-10 py-4 text-base font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.6)]"
+          >
+            Falar com especialista
+            <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
 
           {/* Números */}
           <div className="mt-6 grid gap-4 sm:grid-cols-4">
@@ -50,7 +49,7 @@ export default function Hero() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-center shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-center shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
               >
                 <p className="text-2xl font-bold">{item.value}</p>
                 <p className="text-xs text-slate-300">{item.label}</p>
@@ -59,23 +58,23 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* COLUNA DIREITA – POR QUE ESCOLHER A YAH */}
+        {/* COLUNA DIREITA — CARD PREMIUM */}
         <div className="flex-1">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.04] px-8 py-8 shadow-[0_24px_70px_rgba(0,0,0,0.75)] backdrop-blur-sm">
-            <div className="mb-4">
-              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-300">
-                Benefícios Yah milhas
-              </span>
-              <h2 className="mt-2 text-2xl font-semibold">
-                Por que escolher a Yah?
-              </h2>
-              <p className="mt-2 text-sm text-slate-200/90">
-                Uma operação desenhada para extrair mais valor das suas milhas,
-                sem complicação e com segurança em cada etapa.
-              </p>
-            </div>
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] px-10 py-10 shadow-[0_20px_60px_rgba(0,0,0,0.55)] backdrop-blur-xl">
+            
+            <span className="text-xs font-semibold tracking-widest uppercase text-teal-300">
+              Benefícios Yah milhas
+            </span>
 
-            <div className="mt-4 space-y-4">
+            <h2 className="mt-2 text-3xl font-semibold">Por que escolher a Yah?</h2>
+
+            <p className="mt-3 text-sm text-slate-200/90 leading-relaxed">
+              Uma operação desenhada para extrair mais valor das suas milhas —
+              com estratégia, velocidade e total segurança.
+            </p>
+
+            {/* LISTA */}
+            <div className="mt-6 space-y-5">
               {[
                 "Menos pontos com combinações inteligentes.",
                 "Liquidez rápida na compra e venda de milhas.",
@@ -83,15 +82,14 @@ export default function Hero() {
                 "Segurança e compliance em todo o processo.",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <span className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-teal-500/15 text-xs text-teal-300">
+                  <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-teal-500/20 text-sm text-teal-300">
                     ✓
                   </span>
-                  <p className="text-sm leading-relaxed text-slate-100">
-                    {item}
-                  </p>
+                  <p className="text-sm leading-relaxed">{item}</p>
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>
