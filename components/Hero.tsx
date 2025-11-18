@@ -40,7 +40,7 @@ export default function Hero() {
             Falar com especialista
           </Link>
 
-          {/* MÉTRICAS — COM ANIMAÇÃO DE CRESCER NO HOVER */}
+          {/* MÉTRICAS — AGORA COM SCALE NO HOVER */}
           <div className="grid gap-3 sm:grid-cols-4 mt-2">
             {[
               { label: "emissões/ano", value: "3.700+" },
@@ -50,7 +50,7 @@ export default function Hero() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="transform rounded-xl border border-white/10 bg-white/10 px-4 py-4 text-center shadow-md transition-transform transition-colors duration-300 hover:-translate-y-1 hover:scale-105 hover:bg:white/20 hover:bg-white/20"
+                className="rounded-xl border border-white/10 bg-white/10 px-4 py-4 text-center shadow-md transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white/20"
               >
                 <p className="text-xl font-bold">{item.value}</p>
                 <p className="text-[11px] text-slate-300">{item.label}</p>
