@@ -45,3 +45,10 @@ export default function Services() {
                 {service.title}
               </h3>
               <p className="text-sm text-slate-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

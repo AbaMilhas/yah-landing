@@ -56,4 +56,18 @@ export default function Contato() {
                 className="group inline-flex items-center gap-2 rounded-full bg-teal-500 px-7 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:scale-[1.03] hover:bg-teal-400 hover:shadow-[0_20px_55px_rgba(15,23,42,0.35)]"
               >
                 Enviar mensagem
-                <span className="translate-x-0 transition-t
+                <span className="translate-x-0 transition-transform duration-300 group-hover:translate-x-1">
+                  ↗
+                </span>
+              </button>
+
+              <p className="text-xs text-slate-500">
+                Resposta rápida pelo WhatsApp em horário comercial.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
