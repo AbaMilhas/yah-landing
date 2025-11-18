@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-[#12051d] text-white pb-20 pt-24">
+    <section className="bg-[#2A063A] text-white pb-20 pt-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 lg:flex-row lg:items-center">
         
         {/* COLUNA ESQUERDA */}
@@ -31,7 +31,7 @@ export default function Hero() {
           {/* CTA */}
           <Link
             href="#contato"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#00E5E5] px-10 py-4 text-base font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.6)]"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#00E5E5] px-10 py-4 text-base font-semibold text-slate-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#00d4d4] hover:shadow-[0_18px_40px_rgba(0,0,0,0.55)]"
           >
             Falar com especialista
             <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
@@ -49,7 +49,7 @@ export default function Hero() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-center shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+                className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/20"
               >
                 <p className="text-2xl font-bold">{item.value}</p>
                 <p className="text-xs text-slate-300">{item.label}</p>
@@ -58,9 +58,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* COLUNA DIREITA — CARD PREMIUM */}
+        {/* COLUNA DIREITA — CARD PREMIUM COM FUNDO CORRETO */}
         <div className="flex-1">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] px-10 py-10 shadow-[0_20px_60px_rgba(0,0,0,0.55)] backdrop-blur-xl">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.04] px-10 py-10 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl">
             
             <span className="text-xs font-semibold tracking-widest uppercase text-teal-300">
               Benefícios Yah milhas
@@ -82,7 +82,7 @@ export default function Hero() {
                 "Segurança e compliance em todo o processo.",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-teal-500/20 text-sm text-teal-300">
+                  <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-teal-500/25 text-sm text-teal-300">
                     ✓
                   </span>
                   <p className="text-sm leading-relaxed">{item}</p>
