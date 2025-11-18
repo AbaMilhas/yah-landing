@@ -3,37 +3,34 @@ export default function Services() {
     {
       title: "Compra de milhas",
       description:
-        "Liquidez rápida para o seu saldo, com avaliação justa e segurança em todo o fluxo.",
+        "Transforme seu saldo de milhas em dinheiro com agilidade, segurança e condições justas.",
     },
     {
-      title: "Venda com inteligência",
+      title: "Venda com estratégia",
       description:
-        "Estratégia na combinação de bancos, clubes e programas para usar menos pontos.",
+        "Usamos inteligência nas combinações para você usar menos pontos e extrair mais valor.",
     },
     {
-      title: "Operação para agências",
+      title: "Suporte para agências",
       description:
-        "Backoffice completo para agências parceiras, com suporte dedicado e acompanhamento.",
+        "Operação dedicada para agências parceiras, com acompanhamento próximo e atendimento ágil.",
     },
   ];
 
   return (
-    <section
-      id="servicos"
-      className="bg-[#0d0416] py-16 text-white sm:py-20"
-    >
+    <section id="servicos" className="bg-[#f5f5fb] py-16 text-slate-900 sm:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase text-teal-300">
+            <p className="text-sm font-semibold uppercase text-teal-500">
               Serviços
             </p>
             <h2 className="text-2xl font-bold sm:text-3xl">
-              O que a Yah faz por você
+              O que a Yah milhas faz por você
             </h2>
-            <p className="mt-2 max-w-xl text-sm text-slate-300">
-              Soluções pensadas para quem quer rentabilizar milhas com
-              previsibilidade, segurança e suporte de verdade.
+            <p className="mt-2 max-w-xl text-sm text-slate-600">
+              Soluções pensadas para quem quer rentabilizar milhas sem dor de
+              cabeça: simples de entender, eficiente na prática.
             </p>
           </div>
         </div>
@@ -42,16 +39,9 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group rounded-2xl border border-white/5 bg-[#170822] p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/70 hover:shadow-[0_24px_70px_rgba(0,0,0,0.85)]"
+              className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/70 hover:shadow-[0_18px_45px_rgba(15,23,42,0.18)]"
             >
-              <h3 className="mb-2 text-lg font-semibold transition-colors group-hover:text-teal-300">
+              <h3 className="mb-2 text-lg font-semibold text-slate-900 transition-colors group-hover:text-teal-600">
                 {service.title}
               </h3>
-              <p className="text-sm text-slate-300">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+              <p className="text-sm text-slate-600">{service.description}</p>

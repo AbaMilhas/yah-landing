@@ -1,38 +1,38 @@
 export default function HowItWorks() {
   const steps = [
     {
-      title: "1. Você envia sua demanda",
+      title: "1. Você nos conta sua necessidade",
       description:
-        "Conta para a Yah quantas milhas tem, em quais bancos/programas e qual o objetivo.",
+        "Informe quantas milhas tem, em quais bancos/programas e se prefere vender ou usar para emissão.",
     },
     {
-      title: "2. Análise inteligente",
+      title: "2. Analisamos as melhores opções",
       description:
-        "Nos bastidores, combinamos contas, tarifas e regras para chegar na melhor utilização.",
+        "A equipe Yah cruza regras, tarifas e oportunidades para chegar no cenário mais vantajoso para você.",
     },
     {
-      title: "3. Fechamento com liquidez",
+      title: "3. Você aprova e concluímos",
       description:
-        "Você aprova a proposta, fechamos a operação e acompanha tudo com suporte próximo.",
+        "Com tudo alinhado, fechamos a operação com agilidade, transparência e acompanhamento até o final.",
     },
   ];
 
   return (
     <section
       id="como-funciona"
-      className="bg-[#12051d] py-16 text-white sm:py-20"
+      className="bg-white py-16 text-slate-900 sm:py-20"
     >
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-10 max-w-2xl space-y-2">
-          <p className="text-sm font-semibold uppercase text-teal-300">
+          <p className="text-sm font-semibold uppercase text-teal-500">
             Como funciona
           </p>
           <h2 className="text-2xl font-bold sm:text-3xl">
-            Simples pra você, sofisticado por trás.
+            Processo simples, resultado profissional.
           </h2>
-          <p className="text-sm text-slate-300">
-            A Yah milhas cuida da inteligência, da segurança e da operação para
-            que você foque no resultado.
+          <p className="text-sm text-slate-600">
+            Você fala com um time especialista em milhas. Nós cuidamos da
+            inteligência e da operação para que tudo seja leve pra você.
           </p>
         </div>
 
@@ -40,19 +40,9 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#170822] p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/70 hover:shadow-[0_24px_70px_rgba(0,0,0,0.85)]"
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-[#f9fafb] p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/70 hover:shadow-[0_18px_45px_rgba(15,23,42,0.18)]"
             >
-              <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-teal-400/10 text-xs font-semibold text-teal-300">
+              <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-teal-50 text-xs font-semibold text-teal-600">
                 {index + 1}
               </span>
-              <h3 className="mb-2 text-lg font-semibold transition-colors group-hover:text-teal-300">
-                {step.title}
-              </h3>
-              <p className="text-sm text-slate-300">{step.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+              <h3 className="mb-2 text-lg font-semibold text-slate-900 t
