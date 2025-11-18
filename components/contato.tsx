@@ -1,203 +1,73 @@
 "use client";
 
-import { useState } from "react";
-import { FaInstagram, FaWhatsapp, FaLinkedin, FaFacebook } from "react-icons/fa";
-
-const WA_NUMBER = process.env.NEXT_PUBLIC_WA || "5551999999999";
-const MAIL_TO = process.env.NEXT_PUBLIC_MAIL_TO || "contato@yahmilhas.com.br";
-const USE_EMAIL_API = process.env.NEXT_PUBLIC_USE_EMAIL_API === "true";
-
-function maskPhone(v: string) {
-  return v
-    .replace(/\D/g, "")
-    .replace(/^(\d{2})(\d)/, "($1) $2")
-    .replace(/(\d{5})(\d{1,4})$/, "$1-$2")
-    .slice(0, 15);
-}
-
 export default function Contato() {
-  const [nome, setNome] = useState("");
-  const [whats, setWhats] = useState("");
-  const [email, setEmail] = useState("");
-  const [mensagem, setMensagem] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const texto = encodeURIComponent(
-      [
-        `Olá, sou ${nome || "—"}.`,
-        whats ? `Whats: ${whats}` : "",
-        email ? `E-mail: ${email}` : "",
-        "",
-        mensagem || "Quero falar com um especialista da Yah.",
-      ]
-        .filter(Boolean)
-        .join("\n")
-    );
-
-    const wa = `https://wa.me/${WA_NUMBER}?text=${texto}`;
-    window.open(wa, "_blank");
-
-    if (USE_EMAIL_API) {
-      try {
-        await fetch("/api/contato", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nome, whats, email, mensagem }),
-        });
-      } catch {}
-    }
-
-    setLoading(false);
-  };
-
   return (
-    <section id="contato" className="mx-auto max-w-6xl px-6 py-16">
-      {/* Título */}
-      <div className="mb-8 flex items-center gap-2">
-        <span className="h-2 w-2 rounded-full bg-teal-500" />
-        <span className="text-xs tracking-widest uppercase text-ink-muted">Contato</span>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-3">
-        {/* Cartão WhatsApp */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="text-lg font-semibold">WhatsApp (resposta rápida)</h3>
-          <p className="mt-2 text-sm text-white/70">
-            Fale direto com um especialista. Envie sua cotação ou dúvida.
+    <section
+      id="contato"
+      className="bg-[#0d0416] py-16 text-white sm:py-20"
+    >
+      <div className="mx-auto max-w-4xl px-4">
+        <div className="mb-8 space-y-2 text-center">
+          <p className="text-sm font-semibold uppercase text-teal-300">
+            Contato
           </p>
-          <a
-            href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Olá! Quero falar com a Yah.")}`}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 inline-flex items-center justify-center rounded-xl bg-teal-500 text-white font-semibold px-5 py-2.5 hover:bg-teal-400 transition"
-          >
-            Abrir WhatsApp
-          </a>
-          <p className="mt-3 text-xs text-white/50">
-            Atendimento humano e ágil.
+          <h2 className="text-2xl font-bold sm:text-3xl">
+            Fale com um especialista Yah
+          </h2>
+          <p className="text-sm text-slate-300">
+            Envie sua demanda de milhas e nosso time retorna rapidamente com as
+            melhores possibilidades para você ou para sua agência.
           </p>
         </div>
 
-        {/* Cartão E-mail + Redes */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="text-lg font-semibold">E-mail & Redes</h3>
-          <p className="mt-2 text-sm text-white/70">
-            Envie detalhado sua necessidade ou acompanhe nossas novidades.
-          </p>
-          <a
-            href={`mailto:${MAIL_TO}?subject=${encodeURIComponent("Contato via site — Yah Milhas")}`}
-            className="mt-4 inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-white font-semibold hover:bg-white/10 transition"
-          >
-            Enviar e-mail
-          </a>
-
-          {/* Redes sociais */}
-          <div className="mt-6 flex gap-4 text-white/70">
-            <a
-              href="https://instagram.com/yahmilhas"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-400 transition"
-              aria-label="Instagram"
-            >
-              <FaInstagram size={22} />
-            </a>
-            <a
-              href="https://facebook.com/yahmilhas"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-400 transition"
-              aria-label="Facebook"
-            >
-              <FaFacebook size={22} />
-            </a>
-            <a
-              href="https://linkedin.com/company/yahmilhas"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-400 transition"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin size={22} />
-            </a>
-            <a
-              href={`https://wa.me/${WA_NUMBER}`}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-teal-400 transition"
-              aria-label="WhatsApp"
-            >
-              <FaWhatsapp size={22} />
-            </a>
-          </div>
-
-          <p className="mt-3 text-xs text-white/50">
-            Siga a Yah nas redes e acompanhe oportunidades exclusivas.
-          </p>
-        </div>
-
-        {/* Formulário */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h3 className="text-lg font-semibold">Falar com especialista</h3>
-          <form onSubmit={handleSubmit} className="mt-4 space-y-3">
-            <div>
-              <label className="block text-sm mb-1">Nome</label>
-              <input
-                type="text"
-                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-yah-900 outline-none focus:border-teal-500"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-                required
-              />
+        <div className="rounded-3xl border border-white/5 bg-[#170822] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.85)] transition-transform duration-300 hover:-translate-y-1">
+          <form className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="mb-1 block text-xs font-medium text-slate-300">
+                  Nome
+                </label>
+                <input
+                  type="text"
+                  className="w-full rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm outline-none transition-all focus:border-teal-400 focus:bg-black/30"
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-xs font-medium text-slate-300">
+                  WhatsApp
+                </label>
+                <input
+                  type="tel"
+                  className="w-full rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm outline-none transition-all focus:border-teal-400 focus:bg-black/30"
+                />
+              </div>
             </div>
 
             <div>
-              <label className="block text-sm mb-1">WhatsApp</label>
-              <input
-                type="text"
-                placeholder="(51) 99999-9999"
-                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-yah-900 outline-none focus:border-teal-500"
-                value={whats}
-                onChange={(e) => setWhats(maskPhone(e.target.value))}
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm mb-1">E-mail</label>
-              <input
-                type="email"
-                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-yah-900 outline-none focus:border-teal-500"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm mb-1">Mensagem</label>
+              <label className="mb-1 block text-xs font-medium text-slate-300">
+                Descreva sua demanda de milhas
+              </label>
               <textarea
                 rows={4}
-                className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-yah-900 outline-none focus:border-teal-500"
-                value={mensagem}
-                onChange={(e) => setMensagem(e.target.value)}
-                placeholder="Ex.: quero vender milhas / dúvidas sobre transferência / emissão"
+                className="w-full rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-sm outline-none transition-all focus:border-teal-400 focus:bg-black/30"
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="mt-2 inline-flex justify-center rounded-xl bg-teal-500 text-white font-semibold px-5 py-2.5 shadow-md hover:bg-teal-400 transition disabled:opacity-60"
-            >
-              {loading ? "Abrindo Whats..." : "Enviar"}
-            </button>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <button
+                type="submit"
+                className="group inline-flex items-center gap-2 rounded-full bg-teal-400 px-7 py-3 text-sm font-semibold text-slate-950 shadow-lg transition-all duration-200 hover:scale-[1.03] hover:bg-teal-300 hover:shadow-[0_20px_55px_rgba(0,0,0,0.9)]"
+              >
+                Enviar mensagem
+                <span className="translate-x-0 transition-transform duration-300 group-hover:translate-x-1">
+                  ↗
+                </span>
+              </button>
 
-            <p className="text-[11px] text-white/50">
-              * Seus dados serão usados apenas para contato/proposta (LGPD).
-            </p>
+              <p className="text-xs text-slate-400">
+                Resposta rápida pelo WhatsApp em horário comercial.
+              </p>
+            </div>
           </form>
         </div>
       </div>
