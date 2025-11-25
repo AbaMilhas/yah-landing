@@ -51,7 +51,7 @@ export default function Simular() {
   }, [cia, pontos]);
 
   // WhatsApp
-  const yahNumber = "5551999999999"; // <-- coloque o número oficial (apenas dígitos)
+  const yahNumber = "5551995256355"; // <-- coloque o número oficial (apenas dígitos)
   const waMessage = useMemo(() => {
     return [
       "Olá! Quero negociar minha cotação ✅",
