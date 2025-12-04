@@ -4,10 +4,10 @@ import React, { useMemo, useState } from "react";
 
 /** Tabela de CPM (R$/milheiro) - ajuste conforme sua precificação */
 const CPM: Record<string, number> = {
-  Latam: 22.0,
+  Latam: 24.0,
   Smiles: 14.0,
   Azul: 10.0,
-  TAP: 37.0,
+  TAP: 35.0,
   "American Airlines": 70.0,
   Iberia: 45.0,
   Qatar: 50.0,
