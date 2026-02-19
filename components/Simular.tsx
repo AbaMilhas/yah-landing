@@ -4,7 +4,7 @@ import React, { useMemo, useState } from "react";
 
 /** Tabela de CPM (R$/milheiro) - ajuste conforme sua precificação */
 const CPM: Record<string, number> = {
-  Latam: 26.0,
+  Latam: 24.0,
   Smiles: 14.0,
   Azul: 10.0,
   TAP: 35.0,
@@ -51,7 +51,7 @@ export default function Simular() {
   }, [cia, pontos]);
 
   // WhatsApp
-  const yahNumber = "5551995256355"; // <-- coloque o número oficial (apenas dígitos)
+  const yahNumber = "5551995761431"; // <-- coloque o número oficial (apenas dígitos)
   const waMessage = useMemo(() => {
     return [
       "Olá! Quero negociar minha cotação ✅",
