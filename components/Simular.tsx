@@ -235,7 +235,7 @@ export default function Simular() {
           {/* WhatsApp */}
           <div>
             <label className="block text-sm font-medium mb-1">WhatsApp</label>
-            <input
+            <input                                                                                                                                                
               type="text"
               placeholder="(51) 99999-9999"
               className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 outline-none focus:border-teal-500"
