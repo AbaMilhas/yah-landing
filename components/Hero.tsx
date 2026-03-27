@@ -80,16 +80,16 @@ export default function Hero() {
             Banco de milhas
           </p>
 
-          {/* Logo Yah no hero */}
-          <div className="mt-2 mb-4">
-            <Image
-              src="/logo-yah-hero.png" // mesma logo que você já está usando no hero
-              alt="Yah Milhas"
-              width={260}
-              height={120}
-              priority
-            />
-          </div>
+          {/* LOGO */}
+        <Link href="/" className="flex items-center">
+          <img
+            src="/logo-yah-header.png"
+            alt="Yah Milhas"
+            className="h-10 w-auto md:h-12 lg:h-14"
+            loading="eager"
+            decoding="sync"
+          />
+        </Link>
 
           {/* Headline e subtítulo */}
           <div className="space-y-4">
