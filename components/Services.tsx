@@ -1,83 +1,64 @@
 "use client";
 
+import { MdCurrencyExchange, MdTrendingUp, MdAirplaneTicket } from "react-icons/md";
+import FadeIn from "./FadeIn";
+
+const SERVICES = [
+  {
+    Icon: MdCurrencyExchange,
+    title: "Compra de milhas",
+    desc: "Transforme seu saldo de milhas em dinheiro com agilidade, segurança e condições justas.",
+  },
+  {
+    Icon: MdTrendingUp,
+    title: "Venda com estratégia",
+    desc: "Usamos inteligência nas combinações para você usar menos pontos e extrair mais valor.",
+  },
+  {
+    Icon: MdAirplaneTicket,
+    title: "Emissões",
+    desc: "Pagando uma taxa de emissão, te auxiliamos na troca da passagem com milhas.",
+  },
+];
+
 export default function Services() {
   return (
-    <section
-      id="servicos"
-      className="bg-[#2A063A] text-white py-16 sm:py-20 border-t border-white/5"
-    >
-      <div className="mx-auto max-w-6xl px-6 space-y-10">
-        {/* Cabeçalho da seção */}
-        <div className="space-y-3 max-w-3xl">
-          <p className="text-sm font-semibold tracking-[0.18em] uppercase text-teal-300">
-            Serviços
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-semibold">
-            O que a Yah milhas faz por você
-          </h2>
-          <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-            Soluções pensadas para quem quer rentabilizar milhas sem dor de
-            cabeça: simples de entender, eficientes na prática.
-          </p>
+    <section id="servicos" className="bg-yah-900 py-24">
+      <div className="section-divider" />
+      <div className="mx-auto max-w-6xl px-6 pt-24">
+
+        <FadeIn direction="up">
+          <div className="mb-12 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div className="space-y-2">
+              <span className="tag">Serviços</span>
+              <h2 className="text-3xl font-bold sm:text-4xl">
+                O que a Yah faz{" "}
+                <span className="gradient-text">por você</span>
+              </h2>
+            </div>
+            <p className="max-w-xs text-sm text-white/45 leading-relaxed">
+              Soluções para rentabilizar milhas sem dor de cabeça.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {SERVICES.map(({ Icon, title, desc }, i) => (
+            <FadeIn key={title} direction="up" delay={i * 100}>
+              <div className="group relative h-full rounded-2xl surface surface-hover p-6 shadow-card">
+                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-teal-500/[0] transition-colors duration-300 group-hover:bg-teal-500/[0.03]" />
+                <div className="relative">
+                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-teal-500/10">
+                    <Icon className="h-5 w-5 text-teal-400" />
+                  </div>
+                  <h3 className="mb-2 text-base font-semibold">{title}</h3>
+                  <p className="text-sm text-white/50 leading-relaxed">{desc}</p>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
         </div>
 
-        {/* Cards de serviços – estilo glassmorphism */}
-        <div className="grid gap-6 md:grid-cols-3">
-          {/* Compra de milhas */}
-          <div className="relative group">
-            {/* Glow lilás no fundo */}
-            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_top,_rgba(201,166,255,0.26),_transparent_60%)] opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
-
-            <div className="relative flex h-full flex-col gap-3 rounded-2xl border border-white/20 bg-white/10 px-5 py-6 shadow-[0_18px_45px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#C9A6FF] group-hover:bg-white/15">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-xs font-semibold text-[#C9A6FF]">
-                01
-              </span>
-
-              <h3 className="text-lg font-semibold">Compra de milhas</h3>
-
-              <p className="text-sm text-slate-100 leading-relaxed">
-                Transforme seu saldo de milhas em dinheiro com agilidade,
-                segurança e condições justas.
-              </p>
-            </div>
-          </div>
-
-          {/* Venda com estratégia */}
-          <div className="relative group">
-            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_top,_rgba(201,166,255,0.26),_transparent_60%)] opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
-
-            <div className="relative flex h-full flex-col gap-3 rounded-2xl border border-white/20 bg-white/10 px-5 py-6 shadow-[0_18px_45px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#C9A6FF] group-hover:bg-white/15">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-xs font-semibold text-[#C9A6FF]">
-                02
-              </span>
-
-              <h3 className="text-lg font-semibold">Venda com estratégia</h3>
-
-              <p className="text-sm text-slate-100 leading-relaxed">
-                Usamos inteligência nas combinações para você usar menos pontos
-                e extrair mais valor.
-              </p>
-            </div>
-          </div>
-
-          {/* Emissões */}
-          <div className="relative group">
-            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_top,_rgba(201,166,255,0.26),_transparent_60%)] opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
-
-            <div className="relative flex h-full flex-col gap-3 rounded-2xl border border-white/20 bg-white/10 px-5 py-6 shadow-[0_18px_45px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-[#C9A6FF] group-hover:bg-white/15">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-xs font-semibold text-[#C9A6FF]">
-                03
-              </span>
-
-              <h3 className="text-lg font-semibold">Emissões</h3>
-
-              <p className="text-sm text-slate-100 leading-relaxed">
-                Pagando uma taxa de emissão, te auxiliamos na troca da passagem
-                com Milhas.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

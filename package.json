@@ -4,7 +4,7 @@
   "private": true,
   "description": "Yah Milhas – banco de milhas e emissões",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node --unhandled-rejections=warn ./node_modules/next/dist/bin/next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

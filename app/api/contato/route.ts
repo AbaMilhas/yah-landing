@@ -10,6 +10,7 @@ export async function POST(req: Request) {
       <p><b>Nome:</b> ${data.nome}</p>
       <p><b>WhatsApp:</b> ${data.whats}</p>
       <p><b>Email:</b> ${data.email}</p>
+      ${data.mensagem ? `<p><b>Mensagem:</b> ${data.mensagem}</p>` : ""}
       <p><b>Origem:</b> ${data.origem || "form"}</p>
       <p><b>Criado em:</b> ${new Date(data.criadoEm).toLocaleString("pt-BR")}</p>
     `;
